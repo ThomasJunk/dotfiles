@@ -1,0 +1,19 @@
+[extensions]
+transplant=
+churn=
+record=
+color=
+fetch=
+graphlog=
+mq=
+notify=
+rebase=
+largefiles=
+shelve=
+bookmarks=
+rebase=
+purge=
+
+[ui]
+merge = meld
+username = Thomas Junk <tjunk@intevation.de>

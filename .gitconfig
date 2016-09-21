@@ -1,0 +1,18 @@
+[core]
+	autocrlf = true
+	safecrlf = false
+	editor = atom
+[merge]
+	tool = kdiff3
+[mergetool "kdiff3"]
+	path = c:/Program Files (x86)/KDiff3/kdiff3.exe
+[diff]
+	guitool = kdiff3
+[difftool "kdiff3"]
+	path = c:/Program Files (x86)/KDiff3/kdiff3.exe
+[user]
+	name = tjunk
+	email = tjunk@intevation.de
+[gui]
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
