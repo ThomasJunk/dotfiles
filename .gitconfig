@@ -1,18 +1,33 @@
-[core]
-	autocrlf = true
-	safecrlf = false
-	editor = atom
-[merge]
-	tool = kdiff3
-[mergetool "kdiff3"]
-	path = c:/Program Files (x86)/KDiff3/kdiff3.exe
-[diff]
-	guitool = kdiff3
-[difftool "kdiff3"]
-	path = c:/Program Files (x86)/KDiff3/kdiff3.exe
+[color]
+    ui = true
+
+[color "branch"]
+    current = yellow reverse
+    local = yello
+    remote = green
+
+[color "status"]
+    added =
+		ellow
+    hanged = green
+    untracked = red
+
 [user]
-	name = tjunk
-	email = tjunk@intevation.de
+		name = Thomas Junk
+		email = tjunk@intevation.de
+
+[core]
+		editor = vim
+
+[web]
+		browser = google-chrome
+
+[diff]
+		tool = meld
+
+[merge]
+    tool = meld
+
 [gui]
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+		lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
