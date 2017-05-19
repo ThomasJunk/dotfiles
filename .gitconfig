@@ -3,31 +3,43 @@
 
 [color "branch"]
     current = yellow reverse
-    local = yello
+    local = yellow
     remote = green
 
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
 [color "status"]
-    added =
-		ellow
     hanged = green
     untracked = red
 
 [user]
-		name = Thomas Junk
-		email = tjunk@intevation.de
+    name = Thomas Junk
+    email = tjunk@intevation.de
 
 [core]
-		editor = vim
+    editor = vim
+	autocrlf = false
 
 [web]
-		browser = google-chrome
+    browser = google-chrome
 
 [diff]
-		tool = meld
+    tool = p4merge
 
 [merge]
-    tool = meld
+    tool = p4merge
 
 [gui]
 [alias]
-		lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	webui = !/home/thomas/git-webui/release/libexec/git-core/git-webui
+[webui]
+	autoupdate = true
+[rerere]
+	enabled = true
+[difftool]
+	prompt = false

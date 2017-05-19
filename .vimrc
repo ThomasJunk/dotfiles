@@ -29,7 +29,6 @@ set showmatch
 au VimResized * :wincmd =
 set ttyfast
 set ruler
-set nowrap
 
 highlight BadWhitespace ctermbg=red guibg=red
 
@@ -129,20 +128,25 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'tmhedberg/SimpylFold'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'ervandew/ag'
 Plugin  'dyng/ctrlsf.vim'
+Plugin 'sjl/splice.vim'
 Plugin 'sjl/badwolf'
 Plugin 'endel/vim-github-colorscheme'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'pangloss/vim-javascript'
 Plugin 'sophacles/vim-bundle-mako'
-Plugin 'rakr/vim-rakr-light'
 Plugin 'woju/vim-colors-woju'
 Plugin 'nvie/vim-flake8'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'tpope/vim-sensible'
+Plugin 'fatih/vim-go'
 Plugin 'noahfrederick/vim-hemisu'
-" Track the engine.
-
-" Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
+Plugin 'wting/rust.vim'
+" Default
+let g:clojure_maxlines = 100
 
 let g:ackprg = 'ag --vimgrep'
 nmap     <C-F>f <Plug>CtrlSFPrompt
@@ -173,12 +177,10 @@ nnoremap <F3> :bp<CR>
 nnoremap <space> za
 inoremap <c-a> <esc>I
 inoremap <c-e> <esc>A
-inoremap <c-D> <esc>yypi
+inoremap <c-D> <esc>yyp
 inoremap <c-j> <esc>ddpi
 inoremap <c-k> <esc>ddkkpi
 noremap <F5> :set invnumber<CR>
-
-let g:airline#extensions#tabline#enabled = 1
 
 " Go related mappings
  au FileType go nmap <Leader>i <Plug>(go-info)
@@ -199,6 +201,10 @@ noremap <C-l> <C-w>l
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
 nnoremap N Nzzzv
+
+
+" Inserting blank lines
+nnoremap <cr> o<esc>
 
 " Same when jumping around
 nnoremap g; g;zz
@@ -227,17 +233,6 @@ set statusline+=%*
 let python_highlight_all=1
 
 
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
-
-
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#goto_command = "<leader>d"
 let g:jedi#goto_assignments_command = "<leader>g"
@@ -262,10 +257,10 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
 
 
 let g:syntastic_loc_list_height=5
-"colorscheme badwolf
+colorscheme badwolf
 "colorscheme github
-set background=light
-colorscheme darkblue
+"set background=light
+"colorscheme hemisu
 
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
@@ -293,7 +288,6 @@ iabbrev lmis ಠ‿ಠ
 iabbrev ipdb import ipdb; ipdb.set_trace()
 iabbrev tj Thomas Junk
 iabbrev tj@ lilith2k7@gmail.com
-iabbrev retrun return
 
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
@@ -301,4 +295,3 @@ let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
-

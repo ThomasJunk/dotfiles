@@ -13,7 +13,17 @@ shelve=
 bookmarks=
 rebase=
 purge=
+hgk=
+highlight = 
+histedit = 
 
 [ui]
-merge = meld
+merge = p4merge
 username = Thomas Junk <tjunk@intevation.de>
+
+[hgview]
+interface = curses
+
+[tortoisehg]
+ui.language = en
+vdiff = meld
