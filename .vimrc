@@ -44,6 +44,7 @@ highlight BadWhitespace ctermbg=red guibg=red
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -59,6 +60,9 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'ayu-theme/ayu-vim' " or other package manager
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'slashmili/alchemist.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -84,13 +88,12 @@ let g:ctrlp_cmd = 'CtrlP'
 
 let g:ctrlp_working_path_mode = 'ra'
 
-color synthwave
-
 if has('termguicolors')
   set termguicolors " 24-bit terminal
 else
   let g:synthwave_termcolors=256 " 256 color mode
 endif
+
 let g:airline_theme='synthwave'
 
 let g:ackprg = 'ag --vimgrep'
@@ -167,3 +170,10 @@ let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#popup_on_dot = 0
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
+
+"...
+set termguicolors     " enable true colors support
+let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
