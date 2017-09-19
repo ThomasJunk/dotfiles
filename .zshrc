@@ -45,7 +45,7 @@ alias me="whoami"
 alias pc4="ping -c4 "
 alias genpass="tr -dc 'a-zA-Z0-9' < /dev/urandom | head -c"
 alias i3rc="vim ~/.config/i3/config"
-alias a="source ../env/bin/activate"
+alias a="source env/bin/activate 2> /dev/null || source ../env/bin/activate"
 alias x="chmod u+x"
 alias hgrc='vim ~/.hgrc'
 alias ux='chmod u+x'
@@ -106,3 +106,5 @@ eval $(dircolors ~/.dircolors)
 export PANEL_FIFO="/tmp/panel-fifo"
 alias emacs="emacs -nw"
  . /etc/profile.d/vte.sh
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
