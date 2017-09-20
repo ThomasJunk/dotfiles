@@ -11,7 +11,7 @@ fi
 
 
 export GOPATH="/home/thomas/go"
-export PATH="/home/thomas/bin/:/home/thomas/smartgit/bin/:/home/thomas/p4/bin/:/home/thomas/tortoisehg/:/home/thomas/maven/bin:/home/thomas/intellij/bin:/home/thomas/pycharm/bin:/bin/:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/thomas/go/bin:$GOPATH/bin"
+export PATH="/home/thomas/pkgdiff/:/home/thomas/bin/:/home/thomas/smartgit/bin/:/home/thomas/p4/bin/:/home/thomas/tortoisehg/:/home/thomas/maven/bin:/home/thomas/intellij/bin:/home/thomas/pycharm/bin:/bin/:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/thomas/go/bin:$GOPATH/bin"
 
 alias zshrc="emacs ~/.zshrc"
 alias src="source ~/.zshrc"
