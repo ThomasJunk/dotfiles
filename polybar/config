@@ -48,9 +48,9 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3 ewmh title
 modules-center =
-modules-right = filesystem xbacklight xkeyboard memory cpu battery volume temperature date powermenu
+modules-right = filesystem xbacklight xkeyboard memory cpu battery volume temperature date
 
-tray-position = right
+tray-position = 
 tray-padding = 2
 ;tray-transparent = true
 ;tray-background = #0063ff
