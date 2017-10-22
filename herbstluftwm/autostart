@@ -20,6 +20,7 @@ hc emit_hook reload
 xsetroot -solid '#333333'
 feh --bg-scale ~/Bilder/4hmssf03i2pz.jpg 
 /home/thomas/gnomekeyring.sh
+pkill compton & 
 compton &
 dunst &
 nm-applet &
@@ -94,6 +95,9 @@ hc keybind $Mod-Control-Left    resize left +$resizestep
 hc keybind $Mod-Control-Down    resize down +$resizestep
 hc keybind $Mod-Control-Up      resize up +$resizestep
 hc keybind $Mod-Control-Right   resize right +$resizestep
+
+#
+hc keybind $Mod-Shift-c spawn /home/thomas/cheat-sheet.sh
 
 # tags
 tag_names=( {1..9} )
@@ -206,6 +210,8 @@ hc rule class="$gimp" windowrole~'gimp-(image-window|toolbox|dock)' manage=on ps
 hc rule class="$gimp" windowrole=gimp-toolbox focus=off index=00 manage=on
 hc rule class="$gimp" windowrole=gimp-dock focus=off index=1 manage=on
 
+hc rule instance="polybar" manage=off
+
 hc set tree_style '╾│ ├└╼─┐'
 
 # unlock, just to be sure
@@ -217,9 +223,11 @@ hc unlock
 # hc detect_monitors
 
 # find the panel
-panel=~/.config/herbstluftwm/panel.sh
-[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
-for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
-    # start it on each monitor
-    "$panel" $monitor &
+#panel=~/.config/herbstluftwm/panel.sh
+#[ -x "$panel" ] || panel=/etc/xdg/herbstluftwm/panel.sh
+#for monitor in $(herbstclient list_monitors | cut -d: -f1) ; do
+#    # start it on each monitor
+#    "$panel" $monitor &
+hc spawn /home/thomas/polybar.sh
+
 done
