@@ -46,8 +46,8 @@ font-0 = cousine:fontformat=truetype:size=10:antialias=true;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = bspwm i3 ewmh
-modules-center = 
+modules-left = bspwm i3 ewmh title
+modules-center =
 modules-right = filesystem xbacklight xkeyboard memory cpu battery volume temperature date powermenu
 
 tray-position = right
@@ -131,6 +131,15 @@ label-urgent-underline = #9b0a20
 ; Default: %icon%  %name%
 label-empty = %icon% %name%
 label-empty-foreground = #55
+
+[module/title]
+type = internal/xwindow
+; Available tokens:
+;   %title%
+; Default: %title%
+label = Window: %title%
+label-maxlen = 100
+
 
 [module/xwindow]
 type = internal/xwindow
