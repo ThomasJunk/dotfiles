@@ -48,7 +48,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3 ewmh title
 modules-center =
-modules-right = filesystem xbacklight xkeyboard memory cpu battery volume temperature date
+modules-right = filesystem xbacklight cpu memory battery volume temperature date
 
 tray-position = 
 tray-padding = 2
@@ -137,7 +137,7 @@ type = internal/xwindow
 ; Available tokens:
 ;   %title%
 ; Default: %title%
-label = %title%
+label = %title% 
 label-maxlen = 100
 
 
@@ -223,7 +223,8 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label = %percentage_used%%
+label = %gb_free%
+#label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
