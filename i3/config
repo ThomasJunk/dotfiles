@@ -23,7 +23,7 @@ exec --no-startup-id dropbox start
 exec --no-startup-id polybar main
 exec setxkbmap -layout de
 assign [class="Gimp"] 9
-assign [class="Pidgin"] 9
+assign [class="Pidgin"] 8
 assign [class= "Google-chrome"] 1
 assign [class="Nautilus"] 5
 assign [class="Geary"] 7
