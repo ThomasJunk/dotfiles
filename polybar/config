@@ -138,7 +138,7 @@ type = internal/xwindow
 ;   %title%
 ; Default: %title%
 label = %title% 
-label-maxlen = 100
+label-maxlen = 80
 
 
 [module/xwindow]
