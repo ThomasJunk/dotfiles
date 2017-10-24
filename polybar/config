@@ -42,9 +42,9 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = cousine:fontformat=truetype:size=10:antialias=true;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = Cousine:style:size=10;2
+font-1 = FontAwesome:size=10;2
+font-2 = Cousine for Powerline:size=18;2
 
 modules-left = bspwm i3 ewmh title
 modules-center =
@@ -56,15 +56,15 @@ tray-padding = 2
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
 ;override-redirect = true
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
 
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
 
 [module/ewmh]
 type = internal/xworkspaces
@@ -200,11 +200,16 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-prev  = 
+icon-seekb = 
+icon-stop  = 
+icon-pause = 
+icon-play  = 
+icon-next  = 
+icon-seekf = 
+
+icon-random = 
+icon-repeat = 
 
 label-song-maxlen = 25
 label-song-ellipsis = true
@@ -212,7 +217,7 @@ label-song-ellipsis = true
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage%%
@@ -220,7 +225,8 @@ label = %percentage%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix =
+format-suffix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label = %gb_free%
@@ -274,7 +280,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M:%S
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #0a6cf5
 
@@ -289,23 +295,29 @@ full-at = 98
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
+time-format        = %H:%M
 
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
+label-discharging  = %percentage%  (%time%)
 
-format-full-prefix = " "
+format-full-prefix =  
+format-padding     = 2
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 =  
 animation-charging-framerate = 750
 
 [module/temperature]
