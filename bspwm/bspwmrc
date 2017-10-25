@@ -5,6 +5,10 @@ compton &
 dunst &
 nm-applet &
 dropbox start &
+polybar main &
+setxkbmap -layout de &
+~/gnomekeyring.sh &
+
 feh --bg-scale ~/Bilder/cornwall_england_ocean_reefs_112034_1920x1080.jpg
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 0
@@ -34,9 +38,4 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-polybar main &
-~/padding.sh &
-setxkbmap -layout de &
-xsetroot -cursor_name left_ptr &
-~/gnomekeyring.sh &
 
