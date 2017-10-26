@@ -37,10 +37,10 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 1
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
 font-0 = Cousine:style:size=10;2
 font-1 = FontAwesome:size=10;2
@@ -51,7 +51,7 @@ modules-center =
 modules-right = filesystem xbacklight cpu memory battery volume temperature date
 
 tray-position = 
-tray-padding = 2
+tray-padding = 1
 ;tray-transparent = true
 ;tray-background = #0063ff
 
@@ -156,7 +156,7 @@ format-prefix-underline = ${colors.secondary}
 label-layout = %layout%
 label-layout-underline = ${colors.secondary}
 
-label-indicator-padding = 2
+label-indicator-padding = 1
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
@@ -171,7 +171,7 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-label-mode-padding = 2
+label-mode-padding = 1
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
@@ -417,7 +417,7 @@ format-discharging-underline = ${self.format-charging-underline}
 label-discharging  = %percentage%  (%time%)
 
 format-full-prefix =  
-format-padding     = 2
+format-padding     = 1
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
