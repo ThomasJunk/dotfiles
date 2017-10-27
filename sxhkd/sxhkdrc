@@ -122,3 +122,35 @@ super + {Left,Down,Up,Right}
 
 super + Pause
         ~/lock.sh
+
+#########
+# Media #
+#########
+
+
+XF86AudioRaiseVolume
+	pactl set-sink-volume 0 +5%
+
+XF86AudioLowerVolume
+	pactl set-sink-volume 0 -5%
+
+XF86AudioMute
+	pactl set-sink-mute 0 toggle
+
+XF86MonBrightnessUp
+	xbacklight -inc 20
+
+XF86MonBrightnessDown
+	xbacklight -dec 20
+
+XF86AudioPlay
+	playerctl play                                                                                            
+
+XF86AudioPause
+	playerctl pause                                                                                          
+
+XF86AudioNext
+	playerctl next                                                                                            
+
+XF86AudioPrev
+	playerctl previous
