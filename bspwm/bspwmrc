@@ -8,6 +8,7 @@ dropbox start &
 polybar main &
 setxkbmap -layout de &
 ~/gnomekeyring.sh &
+~/no_tap.sh &
 
 feh --bg-scale ~/Bilder/pferdekopf.jpg 
 
@@ -27,11 +28,15 @@ bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Pidgin desktop='^8'
 bspc rule -a Google-chrome desktop='^1'
 bspc rule -a Code desktop='^3'
+bspc rule -a Gedit desktop='^4'
+bspc rule -a Git-cola desktop='^4'
+bspc rule -a Hgview: desktop='^4'
 bspc rule -a Emacs desktop='^3'
 bspc rule -a Atom desktop='^3'
 bspc rule -a Nautilus desktop='^5'
 bspc rule -a Thunderbird desktop='^7'
 bspc rule -a net-sourceforge-squirrel_sql-client-Main desktop='^6'
+bspc rule -a sqltabs desktop='^6'
 bspc rule -a jetbrains-pycharm-ce desktop='^4'
 
 bspc rule -a mplayer2 state=floating
