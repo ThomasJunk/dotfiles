@@ -10,12 +10,12 @@ setxkbmap -layout de &
 ~/gnomekeyring.sh &
 ~/no_tap.sh &
 
-feh --bg-scale ~/Bilder/pferdekopf.jpg 
+feh --bg-scale ~/Bilder/rick.png 
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
 bspc config border_width         0
-bspc config window_gap           8
+bspc config window_gap           16
 bspc config split_ratio          0.52
 bspc config single_monocle                true
 bspc config borderless_monocle            true
@@ -27,6 +27,7 @@ bspc config focus_follows_pointer         true
 bspc rule -a Gimp desktop='^8' state=floating follow=on 
 bspc rule -a Pidgin desktop='^8'
 bspc rule -a Google-chrome desktop='^1'
+bspc rule -a Firefox desktop='^1'
 bspc rule -a Code desktop='^3'
 bspc rule -a Gedit desktop='^4'
 bspc rule -a Git-cola desktop='^4'
@@ -34,6 +35,7 @@ bspc rule -a Hgview: desktop='^4'
 bspc rule -a Emacs desktop='^3'
 bspc rule -a Atom desktop='^3'
 bspc rule -a Nautilus desktop='^5'
+bspc rule -a jetbrains-idea-ce desktop='^9' 
 bspc rule -a Thunderbird desktop='^7'
 bspc rule -a net-sourceforge-squirrel_sql-client-Main desktop='^6'
 bspc rule -a sqltabs desktop='^6'
