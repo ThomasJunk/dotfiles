@@ -10,14 +10,18 @@ if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
 fi
 
 # PATHS
-export GOPATH="/home/thomas/go"
-export PATH="/home/thomas/pkgdiff/:/home/thomas/bin/:/home/thomas/smartgit/bin/:/home/thomas/p4/bin/:/home/thomas/tortoisehg/:/home/thomas/maven/bin:/home/thomas/intellij/bin:/home/thomas/pycharm/bin:/bin/:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/thomas/go/bin:$GOPATH/bin"
+
+export PATH="/home/thomas/pkgdiff/:/home/thomas/bin/:/home/thomas/smartgit/bin/:/home/thomas/p4/bin/:/home/thomas/tortoisehg/:/home/thomas/maven/bin:/home/thomas/intellij/bin:/home/thomas/pycharm/bin:/bin/:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/thomas/go/bin:$GOPATH/bin:/home/thomas/.cargo/bin:/home/thomas/shell-functools/ft"
+export PATH="$HOME/.yarn/bin:$PATH"
 
 # EXPORTS
 export TERM="xterm-256color"
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PANEL_FIFO="/tmp/panel-fifo"
+export XDG_CONFIG_HOME="$HOME/.config"
+export JAVA_HOME="/usr/java/latest"
+export GOPATH="/home/thomas/go"
 
 # ZSH
 alias src="source ~/.zshrc"
@@ -106,13 +110,29 @@ alias sep="echo '------------------->'"
 alias side="cdiff -s0"
 alias smartgit="smartgit.sh"
 alias sublime="/bin/sublime_text"
-alias syu="sudo zypper up"
+alias syu="sudo zypper dup"
 alias tf="tail -f"
-
+alias open="nautilus"
+alias browser="google-chrome"
+alias inspect="fzf --preview 'cat {}'"
+alias downloadclient="cd /home/thomas/Intevation/downloadclient/"
 # EVAL
 eval $(dircolors ~/.dircolors)
 eval "$(rbenv init -)"
 
+# Functions
+sf() {
+  if [ "$#" -lt 1 ]; then echo "Supply string to search for!"; return 1; fi
+  printf -v search "%q" "$*"
+  include="yml,js,json,php,md,styl,pug,jade,html,config,py,cpp,c,go,hs,rb,conf,fa,lst"
+  exclude=".config,.git,node_modules,vendor,build,yarn.lock,*.sty,*.bst,*.coffee,dist"
+  rg_command='rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always" -g "*.{'$include'}" -g "!{'$exclude'}/*"'
+  files=`eval $rg_command $search | fzf --ansi --multi --reverse | awk -F ':' '{print $1}'`
+  [[ -n "$files" ]] && ${EDITOR:-vim} $files
+}
+
 . /etc/profile.d/vte.sh
 
 setopt clobber
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

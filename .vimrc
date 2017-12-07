@@ -111,8 +111,6 @@ nnoremap <space> za
 inoremap <c-a> <esc>I
 inoremap <c-e> <esc>A
 inoremap <c-D> <esc>yyp
-inoremap <c-j> <esc>ddpi
-inoremap <c-k> <esc>ddkkpi
 noremap <F5> :set invnumber<CR>
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -161,6 +159,14 @@ let g:lexima_enable_basic_rules = 1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ neocomplete#start_manual_complete()
+function! s:check_back_space() "{{{
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -176,4 +182,4 @@ set termguicolors     " enable true colors support
 let ayucolor="light"  " for light version of theme
 let ayucolor="mirage" " for mirage version of theme
 let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+colorscheme zellner 
