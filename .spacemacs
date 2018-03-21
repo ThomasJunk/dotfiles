@@ -369,22 +369,6 @@ you should place your code here."
 (require 'ox-reveal)
 (setq org-reveal-root "file:///home/thomas/reveal.js")
 
-;; LaTeX
-(require 'ox-latex)
-(unless (boundp 'org-latex-classes)
-  (setq org-latex-classes nil))
-(add-to-list 'org-latex-classes
-             '("koma-article"
-               "\\documentclass{scrartcl}
-             [NO-DEFAULT-PACKAGES]
-             [EXTRA]"
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\paragraph{%s}" . "\\paragraph*{%s}")
-               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-
-
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
