@@ -9,10 +9,6 @@ if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
   source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
 fi
 
-# PATHS
-
-export PATH="/home/thomas/pkgdiff/:/home/thomas/bin/:/home/thomas/smartgit/bin/:/home/thomas/p4/bin/:/home/thomas/tortoisehg/:/home/thomas/maven/bin:/home/thomas/intellij/bin:/home/thomas/pycharm/bin:/bin/:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/thomas/go/bin:$GOPATH/bin:/home/thomas/.cargo/bin:/home/thomas/shell-functools/ft"
-export PATH="$HOME/.yarn/bin:$PATH"
 
 # EXPORTS
 export TERM="xterm-256color"
@@ -20,8 +16,15 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PANEL_FIFO="/tmp/panel-fifo"
 export XDG_CONFIG_HOME="$HOME/.config"
-export JAVA_HOME="/usr/java/latest"
+export JAVA_HOME="/usr/lib64/jvm/java-8-openjdk/"
 export GOPATH="/home/thomas/go"
+
+# PATHS
+
+export PATH="/home/thomas/.cargo/bin/:/home/thomas/mvn/bin/:/home/thomas/.npm-global/bin:/home/thomas/bin/:/home/thomas/smartgit/bin/:/home/thomas/p4/bin/:/home/thomas/tortoisehg/:/home/thomas/maven/bin:/home/thomas/intellij/bin:/home/thomas/pycharm/bin:/bin/:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/thomas/go/bin:$GOPATH/bin:/home/thomas/.cargo/bin:/home/thomas/shell-functools/ft:/home/thomas/.gem/ruby/2.5.0/bin"
+export PATH="$HOME/.yarn/bin:$PATH"
+
+
 
 # ZSH
 alias src="source ~/.zshrc"
@@ -39,22 +42,6 @@ alias gp="git pull"
 alias gs="git status"
 alias gshow="git show"
 
-# MERCURIAL
-alias b="hg branch"
-alias bb="hg branches"
-alias h="hg glog -l1"
-alias hi="hg in"
-alias hd="hg diff"
-alias hf="hg pull -u"
-alias hgrc='emacs ~/.hgrc'
-alias hgs="hg serve"
-alias hh="hg tags | head"
-alias hl="hg glog"
-alias ho="hg out"
-alias hrh="hg revert -a"
-alias hs="hg status"
-alias hu="hg update"
-
 # configs
 alias emacsrc="emacs ~/.emacs.d/init.el"
 alias i3rc="emacs ~/.config/i3/config"
@@ -62,41 +49,18 @@ alias termrc="emacs ~/.config/termite/config"
 
 # python
 alias a="source env/bin/activate 2> /dev/null || source ../env/bin/activate"
-alias docs="invoke docs && serve"
 alias mkinit="touch __init__.py"
 alias p="pserve development.ini --reload"
 alias psetup="python setup.py develop"
 alias runserver="python manage.py runserver"
-alias s="python -m SimpleHTTPServer"
-
-# work
-alias admin="~/smart-admin.sh"
-alias aspirant="cd ~/Intevation/lib/aspirant"
-alias bewec="cd ~/Intevation/bewec"
-alias brabbel="cd ~/Intevation/lib/brabbel"
-alias dbreset="~/dbreset.sh"
-alias ec="cd ~/Intevation/ec/"
-alias ecimporter="cd ~/Intevation/ecimporter"
-alias efa="cd ~/Intevation/lib/efa"
-alias euhu="cd ~/Intevation/lib/euhu"
-alias formbar="cd ~/Intevation/lib/formbar"
-alias intevation="cd /home/thomas/Intevation"
-alias pwe="cd ~/Intevation/pwe/"
-alias release="emacs /home/thomas/workspace/emacs/org/releases/releases.org"
-alias reportserver="cd ~/Intevation/reportserver"
-alias ringo="cd ~/Intevation/lib/ringo"
-alias qe="cd ~/Intevation/qe/"
-alias sib="cd ~/Intevation/sib/"
-alias thoe="ssh thoe"
-alias tunnel="ssh tjunk@thoe.intevation.de -L 5000:sib-testing.hq.intevation.de:80 -N"
-alias waskiq="cd ~/Intevation/waskiq/"
-alias wdev="ssh waskiqdev"
+alias s="python2 -m SimpleHTTPServer"
 
 # DOCKER
 alias container="docker container"
 alias dps="docker ps -a"
 alias images="docker images"
 alias image="docker image"
+alias portainer="docker run -d -p 9000:9000 --restart always -v /var/run/docker.sock:/var/run/docker.sock -v /opt/portainer:/data portainer/portainer"
 
 # GENERAL
 alias cls="clear"
@@ -110,16 +74,19 @@ alias sep="echo '------------------->'"
 alias side="cdiff -s0"
 alias smartgit="smartgit.sh"
 alias sublime="/bin/sublime_text"
-alias syu="sudo zypper dup"
+alias syu="trizen -Syyu"
 alias tf="tail -f"
 alias open="nautilus"
 alias browser="google-chrome"
 alias inspect="fzf --preview 'cat {}'"
 alias downloadclient="cd /home/thomas/Intevation/downloadclient/"
+alias smartgit="~/smartgit/bin/smartgit.sh"
+alias gopath="/home/thomas/go/src/github.com/thomasjunk"
+alias godev="cd $gopath"
 # EVAL
 eval $(dircolors ~/.dircolors)
 eval "$(rbenv init -)"
-
+eval "$(ssh-agent)" > /dev/null
 # Functions
 sf() {
   if [ "$#" -lt 1 ]; then echo "Supply string to search for!"; return 1; fi
@@ -136,3 +103,4 @@ sf() {
 setopt clobber
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
