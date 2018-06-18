@@ -109,7 +109,7 @@ Plugin 'colepeters/spacemacs-theme.vim'
 Plugin 'jmcantrell/vim-virtualenv'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'exitface/synthwave.vim'
-
+Plugin 'fatih/vim-go'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
