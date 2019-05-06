@@ -63,5 +63,8 @@
   "gitlens.views.fileHistory.enabled": true,
   "gitlens.views.lineHistory.enabled": true,
   "workbench.colorTheme": "Slack Theme Aubergine - NEW COLOR",
-  "workbench.editor.enablePreviewFromQuickOpen": false
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "breadcrumbs.enabled": true,
+  "window.title": "${dirty} ${activeEditorMedium}${separator}${rootName}",
+  "files.trimTrailingWhitespace": true
 }
