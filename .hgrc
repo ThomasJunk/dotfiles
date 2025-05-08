@@ -14,16 +14,40 @@ bookmarks=
 rebase=
 purge=
 hgk=
-highlight = 
-histedit = 
+highlight =
+histedit =
+extdiff =
 
 [ui]
-merge = p4merge
-username = Thomas Junk <tjunk@intevation.de>
-
-[hgview]
-interface = curses
+merge = meld
+username = Thomas Junk <thomas.junk@intevation.de>
 
 [tortoisehg]
 ui.language = en
 vdiff = meld
+fontcomment = Courier New,10,-1,5,50,0,0,0,0,0
+fontdiff = Courier New,10,-1,5,50,0,0,0,0,0
+fontlog = Courier New,10,-1,5,50,0,0,0,0,0
+fontoutputlog = Roboto,8,-1,5,50,0,0,0,0,0
+
+[extdiff]
+cmd.meld=
+
+[diff]
+git = True
+ignorews = True
+ignorewsamount = True
+ignoreblanklines = True
+
+[alias]
+undo = revert --no-backup
+
+[pager]
+pager = less -FRX
+
+[merge-tools]
+meld.priority = 1
+meld.premerge = False
+meld.args = $local $base $other --output=$output
+[merge-patterns]
+** = meld
